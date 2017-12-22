@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="viewer.min.css">
+	<script type="text/javascript" src="jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="viewer-jquery.min.js"></script>
+</head>
+<style type="text/css">
+	img{
+		width: 100px;
+		height: 100px;
+	}
+</style>
+<body>
+	<div id="img_box">
+		<img src="img/308861.jpg" alt="placeholder+image">
+		<img src="img/312370.jpg" alt="placeholder+image">
+		<img src="img/314017.jpg" alt="placeholder+image">
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	function Showimg(strName) { 
+    
+    $("#" + strName).viewer({
+        url: 'data-original' ,  
+    });
+    $("#" + strName).viewer('update');//重新加载
+}
+$("#img_box img").on("click",function(){
+	Showimg("img_box")
+	//$('#dowebok').viewer();
+})
+</script>
